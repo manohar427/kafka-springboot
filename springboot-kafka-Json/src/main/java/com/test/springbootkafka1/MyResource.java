@@ -3,6 +3,7 @@ package com.test.springbootkafka1;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,8 @@ public class MyResource {
 	@Autowired
 	KafkaTemplate<String, User> kafkaTemplate;
 	
-	String topic = "zest-topic";
+	@Value("${app.topic.example}")
+	String topic;
 
 	public String pushMessage(String abc) {
 
