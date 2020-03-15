@@ -18,9 +18,8 @@ public class SpringKafkaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... strings) throws Exception {
-		for (int i = 1; i < 13; i++) {
-			Thread.sleep(3000);
-			sender.send("message-" + i);
+		for (int i = 1; i < 100; i++) {
+			sender.send("Sample Sender Message::::::" + i);
 		}
 	}
 }
